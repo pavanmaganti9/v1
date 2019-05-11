@@ -14,3 +14,17 @@ print(my_data3)
 # nested tuple
 my_data4 = ((2, 3, 4), (1, 2, "hi"))
 print(my_data4)
+
+"""Sequences"""
+
+a="Hello"
+print(a[:3])
+
+a=[0, 1, 2, 3]
+print(a[:2])
+
+a=4, 5, 6, 4
+print(a[:2])
+
+a=range(10)
+print(a[:4])
