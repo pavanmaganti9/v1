@@ -9,4 +9,4 @@ def function():
 
 t = function()
 print(t.name)
-print(t.)
+print(t.var)
