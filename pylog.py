@@ -1,6 +1,7 @@
 # importing module
 import logging
 
+print(dir(logging))
 
 # Create and configure logger
 logging.basicConfig(filename="newfile.log",
