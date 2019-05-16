@@ -4,7 +4,7 @@ a = [1, 2, 3]
 b = [4, 5, 6]
 c = [a, b]
 
-#Using normal assignment operatings to copy:
+#Using normal assignment operations to copy:
 d = c
 
 print(id(c) == id(d))         # True - d is the same object as c
