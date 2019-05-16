@@ -7,3 +7,22 @@ for child in root.iter():
 
 for child in root.find('.//EstablishmentDetail'):
     print(child.tag, child.attrib)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#https://stackoverflow.com/questions/43921237/python-access-nested-children-in-xml-file-parsed-with-elementtree
