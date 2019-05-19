@@ -1,4 +1,6 @@
 from pymongo import MongoClient
+import pprint
+from bson.json_util import dumps
 
 client = MongoClient('mongodb://localhost', 27017)
 
@@ -22,7 +24,43 @@ rec_id1 = collection.insert_one(emp_rec1)
 rec_id2 = collection.insert_one(emp_rec2)
 
 if rec_id1.acknowledged:
-    print('course added : 1 Id is '+ str(rec_id1.inserted_id))
+    print('course added : 1 Id is ' + str(rec_id1.inserted_id))
 
 if rec_id2.acknowledged:
-    print('course added : 2 Id is '+ str(rec_id2.inserted_id))
+    print('course added : 2 Id is ' + str(rec_id2.inserted_id))
+
+# multiple insert
+
+ary = [
+        {
+            "name": "Mr.Pavan",
+            "eid": 24,
+            "location": "Bandar"
+        },
+        {
+            "name": "Mrs.Bindu",
+            "eid": 14,
+            "location": "Pilli"
+        },
+]
+
+result = collection.insert_many(ary)
+for obj_id in result.inserted_ids:
+    print('course added : Id is ' + str(obj_id))
+
+# find documents
+find = collection.find()
+for res in find:
+    pprint.pprint(res)
+
+# find documents
+find = collection.find({'name':'Mr.Pavan'})
+for res1 in find:
+    pprint.pprint(res1)
+
+# find documents
+find = collection.find().sort('location', 1)
+for res in find:
+    #res.encode('ascii')
+    res1 = dumps(res)
+    pprint.pprint(res1)
