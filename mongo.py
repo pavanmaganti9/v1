@@ -64,3 +64,45 @@ for res in find:
     #res.encode('ascii')
     res1 = dumps(res)
     pprint.pprint(res1)
+
+# find documents
+find = collection.find().limit(1)
+for res in find:
+    pprint.pprint(res)
+
+# find documents
+find = collection.find().limit(1).skip(1)
+for res in find:
+    res1 = dumps(res)
+    pprint.pprint(res1)
+
+
+# update
+find1 = collection.find()
+collection.update(
+    {'location':'Pilli'},
+    {
+        '$set':{'location':'Challapalli'}
+    }, multi=False
+)
+
+find = collection.find()
+for res in find:
+    res1 = dumps(res)
+    pprint.pprint(res1)
+
+print(collection.find({'name':'Mrs.Bindu'}).count())
+
+collection.delete_one({'name':'Mrs.Bindu'})
+
+print(collection.find({'name':'Mrs.Bindu'}).count())
+
+collection.delete_many({'name':'Mrs.Bindu'})
+
+print(collection.find({'name':'Mrs.Bindu'}).count())
+
+print(list(collection.aggregate([{
+    '$group': {
+        '_id': '$name'
+    }
+}])))
