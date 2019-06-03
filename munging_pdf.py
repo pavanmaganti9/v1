@@ -9,3 +9,7 @@ pdfkit.from_file('docs/test.html', PdfFilename, configuration=config)
 
 #generating from URL
 pdfkit.from_url('https://www.youtube.com/watch?v=Fo7J2dHpMjk','sample1.pdf', configuration=config)
+
+#for multiple
+pdfkit.from_url(['google.com', 'geeksforgeeks.org', 'facebook.com'], 'Pavan.pdf')
+pdfkit.from_file(['file1.html', 'file2.html'], 'out.pdf')
