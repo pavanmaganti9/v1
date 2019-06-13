@@ -58,6 +58,8 @@ df_row.to_csv('out.csv', index=False)
 
 df_row.to_html('out.html', index=False)
 
+df_row.to_json(r'out.json',orient='records')
+
 path_wkthmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
 config = pdfkit.configuration(wkhtmltopdf=path_wkthmltopdf)
 PdfFilename = 'out.pdf'
