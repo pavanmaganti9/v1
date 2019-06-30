@@ -7,7 +7,8 @@ def string_length(my_string):
     return counter
 
 # taking user input
-string_input = input("enter string : ")
+#string_input = input("enter string : ")
+string_input = ['Pavan','Bindu']
 length = string_length(string_input)
 
 print("length is ", length)
